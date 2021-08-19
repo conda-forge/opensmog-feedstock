@@ -1,5 +1,5 @@
 {% set name = "OpenSMOG" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 27fe5403166c8ab54884255521f9fc738159b317874f7564c3f47a5fba1337cc
+  sha256: 865b88d9c11ce4eb65062bb42f9bb2da97a8eb51d91756b25ad41798c2479098
 
 build:
   number: 0
