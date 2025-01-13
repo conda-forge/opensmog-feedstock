@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 59658c40b3c623ac3672890c289bf4bcfdf77424719f0c1bbb439c5659af5837
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - CLINAME=OpenSMOG._cli:main
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - lxml
     - openmm
 
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/smog-server/OpenSMOG
