@@ -11,7 +11,7 @@ source:
   sha256: 847b0836720534e67a08b86ed8f5efba24624d638e7bf30f7a05820e9c715603
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - CLINAME=OpenSMOG._cli:main
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - lxml
     - openmm
 
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/smog-server/OpenSMOG
